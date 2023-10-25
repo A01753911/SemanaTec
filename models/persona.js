@@ -1,16 +1,15 @@
 const Sequielize=require("sequelize");
 
-const Proyecto = (sequielize) =>{
-    sequielize.define("proyecto",{
+const Persona = (sequielize) =>{
+    sequielize.define("persona",{
         idPersona:{
             type: Sequielize.INTEGER,
             autoIncrement: true,
             primaryKey: true,
             allowNull: false
         },
-        nombre: Sequielize.STRING(30),
-        descripcion: Sequielize.STRING
+        nombre: Sequielize.STRING(50)
     })
 };
 
-module.exports = Proyecto;
+module.exports = Persona;

@@ -1,7 +1,11 @@
 // Importar bibliotecas
 
 const express= require("express"); 
-const app = express()
+const app = express();
+
+//Traer el objeto de conexion
+
+const sequelize = require("./util/database")
 
 //middleware
 
@@ -16,6 +20,11 @@ app.get("/test", (request, response)=>{
 
 //levantar el server y escuchar peticiones
 
-app.listen(8080, () =>{
-    console.log("Sevidor escuchando")
-})
+sequelize.sync()
+    .then(result=>{
+        app.listen(8080, () =>{
+            console.log("Sevidor escuchando")
+        })
+    })
+    .catch(error=>console.log(error));
+
