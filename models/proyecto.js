@@ -2,7 +2,7 @@ const Sequielize=require("sequelize");
 
 const Proyecto = (sequielize) =>{
     sequielize.define("proyecto",{
-        idPersona:{
+        idProyecto:{
             type: Sequielize.INTEGER,
             autoIncrement: true,
             primaryKey: true,
